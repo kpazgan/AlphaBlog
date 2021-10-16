@@ -1,6 +1,12 @@
-<h1><%= @article.title %></h1>
+<h1>Showing article details</h1>
+
+<p><%= @article.title %></p>
 
 <p><%= @article.description %></p>
 
-<a href="/articles">Come back</a>
+<p>
+  <%= link_to 'Edit', edit_article_path(@article) %> |
+  <%= link_to 'Delete', @article, method: :delete, data: {confirm: "Are you sure?"} %> |
+  <%= link_to 'Return to articles listing', articles_path %>
+</p>
 
