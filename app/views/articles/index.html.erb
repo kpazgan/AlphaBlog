@@ -14,8 +14,10 @@
       <tr>
         <td><%= article.title %></td>
         <td><%= article.description %></td>
-        <td><a href="articles/<%= article.id %>">show</a>
-          <a href="articles/<%=article.id %>/edit">edit</a>
+        <td>
+          <%= link_to 'Show', article %>
+          <%= link_to 'Edit', edit_article_path(article) %>
+          <%= link_to 'Delete', article, method: :delete %>
         </td>
       </tr>
     <% end %>
